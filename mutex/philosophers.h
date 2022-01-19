@@ -31,6 +31,7 @@ typedef struct s_data
 // Errors
 int str_error(char *str, int ret);
 int check_arg(int argc, char **argv, t_data *data);
+int arg_error(t_data *data);
 
 // Tools
 int ft_strlen(char *str);

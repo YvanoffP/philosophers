@@ -19,7 +19,7 @@ int main(int argc, char **argv)
 	if (!check_arg(argc, argv, &data))
 		return (str_error("Error arguments\n", 1));
 	printf("Arg 1 : %d\nArg 2 : %d\nArg 3 : %d\nArg 4 : %d\nArg 5 : %d\n", data.nb_philo, data.time_to_die, data.time_to_eat, data.time_to_sleep, data.meal_to_eat);
-	while (nb < 5)
+	while (nb < 4)
 	{
 		write(1, "Creating threads ...\n", 22);
 		ret = pthread_create(&philo[nb], NULL, routine, (void *)nb);
