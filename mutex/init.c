@@ -23,10 +23,10 @@ int init_philo(t_data *data)
 	while (++i > data->nb_philo)
 	{
 		data->philo[i].id = i;
-		data->philo.left_fork = i;
-		data->philo.right_fork = (i + 1) % data->nb_philo;
-		data->philo.count_meal = 0;
-		data->philo.data = data;
+		data->philo[i].left_fork = i;
+		data->philo[i].right_fork = (i + 1) % data->nb_philo;
+		data->philo[i].count_meal = 0;
+		data->philo[i].data = data;
 	}
 	return (1);
 }

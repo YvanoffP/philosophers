@@ -1,5 +1,5 @@
 CC       =    gcc
-FLAGS    =    -Wall -Wextra -Werror -g -I
+FLAGS    =    -Wall -Wextra -Werror -g -I.
 
 SRCS    =    main.c init.c error.c tools.c
 NAME    =    philo
@@ -9,10 +9,10 @@ OBJS    =    $(SRCS:.c=.o)
 all:        $(NAME)
 
 $(OBJS):    %.o: %.c
-			$(CC) -c $< -o $@
+			$(CC) $(FLAGS) -c $< -o $@
 
 $(NAME):    $(OBJS)
-			$(CC) -o $(NAME) $(OBJS)
+			$(CC) $(FLAGS) -o $(NAME) $(OBJS)
 
 clean:
 			rm -rf $(SRCS:.c=.o)

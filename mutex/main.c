@@ -2,9 +2,7 @@
 
 int main(int argc, char **argv)
 {
-	pthread_t	philo[4];
 	long		nb;
-	int			ret;
 	t_data		data;
 
 	nb = 0;
