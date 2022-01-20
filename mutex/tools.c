@@ -34,3 +34,29 @@ int ft_strlen(char *str)
 		i++;
 	return (i);
 }
+
+void	print_message(t_data *data, int id, char *str)
+{
+	pthread_mutex_lock(&(data->message));
+	if (!(data->dead))
+	{
+		printf("%lli ", timestamp() - data->init_time);
+		printf("%i ", id + 1);
+		printf("%s\n", str);
+	}
+	pthread_mutex_unlock(&(data->message));
+	return ;
+}
+
+long long	timestamp(void)
+{
+	struct timeval	t;
+
+	gettimeofday(&t, NULL);
+	return ((t.tv_sec * 1000) + (t.tv_usec / 1000));
+}
+
+long long	time_diff(long long past, long long pres)
+{
+	return (pres - past);
+}
