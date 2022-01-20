@@ -28,7 +28,7 @@ void	*routine(void *philo_addr)
 	while (!(data->dead))
 	{
 		philo_lunch(philo, data);
-		if (!(data->end))
+		if (data->end)
 			break ;
 		print_message(data, philo->id, "is sleeping");
 		sleep_timer(data->time_to_sleep, data);
