@@ -1,38 +1,29 @@
 #include "philosophers.h"
 
-int    ft_atoi(const char *nptr)
+long long	timestamp(void)
 {
-    int    sign;
-    int    count;
-    int    res;
+	struct timeval	t;
 
-    sign = 1;
-    count = 0;
-    res = 0;
-    while (nptr[count] == ' ' || (nptr[count] >= 9 && nptr[count] <= 13))
-        count++;
-    if (nptr[count] == '-' || nptr[count] == '+')
-    {
-        if (nptr[count] == '-')
-            sign = sign * -1;
-        count++;
-    }
-    while (nptr[count] >= '0' && nptr[count] <= '9')
-    {
-        res = res * 10 + nptr[count] - '0';
-        count++;
-    }
-    return (res * sign);
+	gettimeofday(&t, NULL);
+	return ((t.tv_sec * 1000) + (t.tv_usec / 1000));
 }
 
-int ft_strlen(char *str)
+long long diff_time(long long flag, long long time_spent)
 {
-	int i;
+	return (time_spent - flag);
+}
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+void	sleep_timer(long long time_to, t_data *data)
+{
+	long long	flag;
+
+	flag = timestamp();
+	while (!(data->dead))
+	{
+		if (diff_time(flag, timestamp()) >= time_to)
+			break ;
+		usleep(50);
+	}
 }
 
 void	print_message(t_data *data, int id, char *str)
@@ -46,17 +37,4 @@ void	print_message(t_data *data, int id, char *str)
 	}
 	pthread_mutex_unlock(&(data->message));
 	return ;
-}
-
-long long	timestamp(void)
-{
-	struct timeval	t;
-
-	gettimeofday(&t, NULL);
-	return ((t.tv_sec * 1000) + (t.tv_usec / 1000));
-}
-
-long long	time_diff(long long past, long long pres)
-{
-	return (pres - past);
 }

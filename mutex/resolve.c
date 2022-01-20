@@ -1,24 +1,11 @@
 #include "philosophers.h"
 
-void	sleep_timer(long long time_to, t_data *data)
-{
-	long long flag;
-
-	flag = timestamp();
-	while (!(data->dead))
-	{
-		if (time_diff(flag, timestamp()) >= time_to)
-			break ;
-		usleep(50);
-	}
-}
-
-void philo_lunch(t_philo *philo, t_data *data)
+void	philo_lunch(t_philo *philo, t_data *data)
 {
 	pthread_mutex_lock(&(data->forks[philo->left_fork]));
-	print_message(data, philo->id, "has taken a fork");
+	print_message(data, philo->id, "has taken a left fork");
 	pthread_mutex_lock(&(data->forks[philo->right_fork]));
-	print_message(data, philo->id, "has taken a fork");
+	print_message(data, philo->id, "has taken a right fork");
 	pthread_mutex_lock(&(data->is_eating));
 	print_message(data, philo->id, "is eating");
 	philo->death_timer = timestamp();
@@ -29,9 +16,9 @@ void philo_lunch(t_philo *philo, t_data *data)
 	pthread_mutex_unlock(&(data->forks[philo->right_fork]));
 }
 
-void *routine(void *philo_addr)
+void	*routine(void *philo_addr)
 {
-	t_philo *philo;
+	t_philo	*philo;
 	t_data	*data;
 
 	philo = (t_philo *)philo_addr;
@@ -41,7 +28,7 @@ void *routine(void *philo_addr)
 	while (!(data->dead))
 	{
 		philo_lunch(philo, data);
-		if (data->end)
+		if (!(data->end))
 			break ;
 		print_message(data, philo->id, "is sleeping");
 		sleep_timer(data->time_to_sleep, data);
@@ -54,13 +41,13 @@ void	death_checker(t_data *data, t_philo *philo)
 {
 	int	i;
 
-	while (!(data->dead))
+	while (!(data->end))
 	{
 		i = -1;
 		while (++i < data->nb_philo && !(data->dead))
 		{
 			pthread_mutex_lock(&(data->is_eating));
-			if (time_diff(philo[i].death_timer, timestamp()) > data->time_to_die)
+			if (diff_time(philo[i].death_timer, timestamp()) > data->time_to_die)
 			{
 				print_message(data, i, "died");
 				data->dead = 1;
@@ -78,9 +65,9 @@ void	death_checker(t_data *data, t_philo *philo)
 	}
 }
 
-void	exit_resolve(t_data *data, t_philo *philo)
+void	exit_solver(t_data *data, t_philo *philo)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (++i < data->nb_philo)
@@ -91,10 +78,10 @@ void	exit_resolve(t_data *data, t_philo *philo)
 	pthread_mutex_destroy(&(data->message));
 }
 
-int resolve(t_data *data)
+int	resolve(t_data *data)
 {
-	int i;
-	t_philo *philo;
+	int	i;
+	t_philo	*philo;
 
 	i = -1;
 	philo = data->philo;
@@ -106,6 +93,6 @@ int resolve(t_data *data)
 		philo[i].death_timer = timestamp();
 	}
 	death_checker(data, data->philo);
-	exit_resolve(data, data->philo);
+	exit_solver(data, philo);
 	return (1);
 }

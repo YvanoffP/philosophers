@@ -1,17 +1,17 @@
-CC       =    gcc
-FLAGS    =    -Wall -Wextra -Werror -g -I.
+CC		=	gcc
+FLAGS	=	-Wall -Wextra -Werror -g -I.
 
-SRCS    =    main.c init.c error.c tools.c resolve.c
-NAME    =    philo
+SRCS	=	main.c init.c error.c resolve.c tools.c
+NAME	=	philo
 
-OBJS    =    $(SRCS:.c=.o)
+OBJS	=	$(SRCS:.c=.o)
 
-all:        $(NAME)
+all:		$(NAME)
 
-$(OBJS):    %.o: %.c
+$(OBJS):	%.o: %.c
 			$(CC) $(FLAGS) -c $< -o $@
 
-$(NAME):    $(OBJS)
+$(NAME):	$(OBJS)
 			$(CC) $(FLAGS) -o $(NAME) $(OBJS)
 
 clean:
@@ -20,6 +20,6 @@ clean:
 fclean:		clean
 			rm -rf $(NAME)
 
-re:    fclean all
+re:	fclean all
 
 .PHONY : all re clean fclean
