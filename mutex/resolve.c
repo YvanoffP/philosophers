@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   resolve.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ypetruzz <ypetruzz@student.42lausanne.ch>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/21 16:43:28 by ypetruzz          #+#    #+#             */
+/*   Updated: 2022/01/21 16:44:21 by ypetruzz         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "philosophers.h"
 
 void	philo_lunch(t_philo *philo, t_data *data)
@@ -70,7 +82,7 @@ void	exit_solver(t_data *data, t_philo *philo)
 	int	i;
 
 	i = -1;
-	while (++i < data->nb_philo)
+	while (++i < data->nb_philo && data->nb_philo != 1)
 		pthread_join(philo[i].thread_id, NULL);
 	i = -1;
 	while (++i < data->nb_philo)
