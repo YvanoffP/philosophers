@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   error.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tpauvret <tpauvret@student.42lausanne.ch>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/21 15:22:42 by tpauvret          #+#    #+#             */
+/*   Updated: 2022/01/21 16:25:41 by tpauvret         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "philosophers.h"
 
 int	str_error(char *str, int ret)
@@ -11,7 +23,7 @@ int	arg_error(t_data *data)
 	// Minimum time to adapt the program, if it's too close to 0
 	// program may crash || add nb max of philo
 	if (data->time_to_die < 50 || data->time_to_sleep < 50
-		|| data->time_to_eat < 50 || data->nb_philo < 2)
+		|| data->time_to_eat < 50 || data->nb_philo < 1)
 		return (0);
 	return (1);
 }
