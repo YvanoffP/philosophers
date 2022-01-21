@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpauvret <tpauvret@student.42lausanne.ch>  +#+  +:+       +#+        */
+/*   By: ypetruzz <ypetruzz@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/21 15:22:42 by tpauvret          #+#    #+#             */
-/*   Updated: 2022/01/21 16:25:41 by tpauvret         ###   ########.fr       */
+/*   Created: 2022/01/21 23:38:57 by ypetruzz          #+#    #+#             */
+/*   Updated: 2022/01/21 23:39:01 by ypetruzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

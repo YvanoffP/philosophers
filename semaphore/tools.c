@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tools.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpauvret <tpauvret@student.42lausanne.ch>  +#+  +:+       +#+        */
+/*   By: ypetruzz <ypetruzz@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/21 15:23:05 by tpauvret          #+#    #+#             */
-/*   Updated: 2022/01/21 15:23:21 by tpauvret         ###   ########.fr       */
+/*   Created: 2022/01/21 23:40:07 by ypetruzz          #+#    #+#             */
+/*   Updated: 2022/01/21 23:40:09 by ypetruzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpauvret <tpauvret@student.42lausanne.ch>  +#+  +:+       +#+        */
+/*   By: ypetruzz <ypetruzz@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/21 15:22:55 by tpauvret          #+#    #+#             */
-/*   Updated: 2022/01/21 15:26:27 by tpauvret         ###   ########.fr       */
+/*   Created: 2022/01/21 23:39:39 by ypetruzz          #+#    #+#             */
+/*   Updated: 2022/01/21 23:39:42 by ypetruzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

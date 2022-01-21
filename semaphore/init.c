@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tpauvret <tpauvret@student.42lausanne.ch>  +#+  +:+       +#+        */
+/*   By: ypetruzz <ypetruzz@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/21 15:22:34 by tpauvret          #+#    #+#             */
-/*   Updated: 2022/01/21 15:22:38 by tpauvret         ###   ########.fr       */
+/*   Created: 2022/01/21 23:39:12 by ypetruzz          #+#    #+#             */
+/*   Updated: 2022/01/21 23:39:13 by ypetruzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
