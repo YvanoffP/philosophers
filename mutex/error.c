@@ -8,8 +8,6 @@ int	str_error(char *str, int ret)
 
 int	arg_error(t_data *data)
 {
-	// Minimum time to adapt the program, if it's too close to 0
-	// program may crash || add nb max of philo
 	if (data->time_to_die < 50 || data->time_to_sleep < 50
 		|| data->time_to_eat < 50 || data->nb_philo < 2)
 		return (0);

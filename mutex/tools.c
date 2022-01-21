@@ -8,7 +8,7 @@ long long	timestamp(void)
 	return ((t.tv_sec * 1000) + (t.tv_usec / 1000));
 }
 
-long long diff_time(long long flag, long long time_spent)
+long long	diff_time(long long flag, long long time_spent)
 {
 	return (time_spent - flag);
 }

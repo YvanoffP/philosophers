@@ -37,17 +37,16 @@ void	*routine(void *philo_addr)
 	return (NULL);
 }
 
-void	death_checker(t_data *data, t_philo *philo)
+void	death_checker(t_data *data, t_philo *philo, int i)
 {
-	int	i;
-
 	while (!(data->end))
 	{
 		i = -1;
 		while (++i < data->nb_philo && !(data->dead))
 		{
 			pthread_mutex_lock(&(data->is_eating));
-			if (diff_time(philo[i].death_timer, timestamp()) > data->time_to_die)
+			if (diff_time(philo[i].death_timer,
+					timestamp()) > data->time_to_die)
 			{
 				print_message(data, i, "died");
 				data->dead = 1;
@@ -58,7 +57,8 @@ void	death_checker(t_data *data, t_philo *philo)
 		if (data->dead)
 			break ;
 		i = 0;
-		while (data->meal_to_eat != -1 && i < data->nb_philo && philo[i].count_meal == data->meal_to_eat)
+		while (data->meal_to_eat != -1 && i < data->nb_philo
+			&& philo[i].count_meal == data->meal_to_eat)
 			i++;
 		if (i == data->nb_philo)
 			data->end = 1;
@@ -80,7 +80,7 @@ void	exit_solver(t_data *data, t_philo *philo)
 
 int	resolve(t_data *data)
 {
-	int	i;
+	int		i;
 	t_philo	*philo;
 
 	i = -1;
@@ -92,7 +92,7 @@ int	resolve(t_data *data)
 			return (0);
 		philo[i].death_timer = timestamp();
 	}
-	death_checker(data, data->philo);
+	death_checker(data, data->philo, 0);
 	exit_solver(data, philo);
 	return (1);
 }
