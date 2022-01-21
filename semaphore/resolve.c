@@ -6,10 +6,9 @@
 /*   By: ypetruzz <ypetruzz@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 23:39:51 by ypetruzz          #+#    #+#             */
-/*   Updated: 2022/01/21 23:50:55 by ypetruzz         ###   ########.fr       */
+/*   Updated: 2022/01/22 00:04:13 by ypetruzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "philosophers.h"
 
@@ -71,7 +70,7 @@ void	*death_checker(void *philo_addr)
 		sem_post(data->is_eating);
 		if (data->dead || philo->count_meal == data->meal_to_eat)
 			break ;
-		usleep(100);
+		usleep(500);
 	}
 	return (NULL);
 }
