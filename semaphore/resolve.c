@@ -27,7 +27,7 @@ void	child_process(t_philo *philo)
 	while (philo->count_meal != data->meal_to_eat)
 	{
 		philo_lunch(philo, data);
-		if (philo->count_meal != data->meal_to_eat)
+		if (philo->count_meal == data->meal_to_eat)
 			break ;
 		print_message(data, philo->id, "is sleeping");
 		sleep_timer(data->time_to_sleep, data);
