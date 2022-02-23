@@ -6,7 +6,7 @@
 /*   By: ypetruzz <ypetruzz@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 23:39:51 by ypetruzz          #+#    #+#             */
-/*   Updated: 2022/01/22 00:04:13 by ypetruzz         ###   ########.fr       */
+/*   Updated: 2022/02/23 15:52:38 by ypetruzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void	exit_solver(t_data *data)
 
 	i = -1;
 	while (++i < data->nb_philo)
-		kill(data->philo[i].id, 15);
+		kill(data->philo[i].process_id, 15);
 	sem_close(data->forks);
 	sem_close(data->message);
 	sem_close(data->is_eating);
