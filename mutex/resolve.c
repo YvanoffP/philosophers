@@ -6,7 +6,7 @@
 /*   By: ypetruzz <ypetruzz@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 16:43:28 by ypetruzz          #+#    #+#             */
-/*   Updated: 2022/01/21 16:44:21 by ypetruzz         ###   ########.fr       */
+/*   Updated: 2022/02/24 15:08:00 by ypetruzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	death_checker(t_data *data, t_philo *philo, int i)
 			break ;
 		i = 0;
 		while (data->meal_to_eat != -1 && i < data->nb_philo
-			&& philo[i].count_meal == data->meal_to_eat)
+			&& philo[i].count_meal >= data->meal_to_eat)
 			i++;
 		if (i == data->nb_philo)
 			data->end = 1;
@@ -82,7 +82,7 @@ void	exit_solver(t_data *data, t_philo *philo)
 	int	i;
 
 	i = -1;
-	while (++i < data->nb_philo && data->nb_philo != 1)
+	while (++i < data->nb_philo && data->nb_philo > 1)
 		pthread_join(philo[i].thread_id, NULL);
 	i = -1;
 	while (++i < data->nb_philo)
