@@ -6,7 +6,7 @@
 /*   By: ypetruzz <ypetruzz@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 16:44:57 by ypetruzz          #+#    #+#             */
-/*   Updated: 2022/01/21 16:44:59 by ypetruzz         ###   ########.fr       */
+/*   Updated: 2022/05/16 13:19:47 by ypetruzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	init_mutex(t_data *data)
 	while (++i < data->nb_philo)
 	{
 		if (pthread_mutex_init(&(data->forks[i]), NULL))
-			return (0);
+			return (free_mutex(i, 0, data));
 	}
 	if (pthread_mutex_init(&(data->message), NULL))
 		return (0);

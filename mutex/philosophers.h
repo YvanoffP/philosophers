@@ -6,7 +6,7 @@
 /*   By: ypetruzz <ypetruzz@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 16:45:15 by ypetruzz          #+#    #+#             */
-/*   Updated: 2022/01/21 16:45:16 by ypetruzz         ###   ########.fr       */
+/*   Updated: 2022/05/16 13:18:56 by ypetruzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ void		sleep_timer(long long time_to, t_data *data);
 void		print_message(t_data *data, int id, char *str);
 long long	timestamp(void);
 long long	diff_time(long long flag, long long time_spent);
+int         free_mutex(int i, int ret, t_data *data);
 
 //Resolve
 void		philo_lunch(t_philo *philo, t_data *data);
