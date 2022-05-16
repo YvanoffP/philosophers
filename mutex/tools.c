@@ -6,7 +6,7 @@
 /*   By: ypetruzz <ypetruzz@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 16:44:48 by ypetruzz          #+#    #+#             */
-/*   Updated: 2022/01/21 16:44:50 by ypetruzz         ###   ########.fr       */
+/*   Updated: 2022/05/16 13:26:23 by ypetruzz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,14 @@ void	print_message(t_data *data, int id, char *str)
 	}
 	pthread_mutex_unlock(&(data->message));
 	return ;
+}
+
+int	free_mutex(int i, int ret, t_data *data)
+{
+	if (i == 0)
+		return (ret);
+	else
+		while (1 != -1)
+			pthread_mutex_destroy(&(data->forks[i--]));
+	return (ret);
 }
